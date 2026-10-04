@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>F-Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         F-INTELLIGENCE APP
+    =============================== -->
+
+    <div id="app">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div class="brand">
+                <div class="brand-logo">F</div>
+
+                <div class="brand-text">
+                    <div class="brand-name">F-Intelligence</div>
+                    <div class="brand-status">
+                        <span class="status-dot"></span>
+                        AI Assistant
+                    </div>
+                </div>
+            </div>
+
+            <button id="newChatBtn" class="new-chat-btn">
+                ＋
+                <span>New Chat</span>
+            </button>
+
+        </header>
+
+
+        <!-- CHAT AREA -->
+        <main id="chatArea">
+
+            <!-- WELCOME SCREEN -->
+            <section id="welcomeScreen" class="welcome-screen">
+
+                <div class="welcome-logo">F</div>
+
+                <h1>Welcome to F-Intelligence</h1>
+
+                <p>
+                    Your intelligent AI assistant.
+                </p>
+
+                <div class="suggestion-grid">
+
+                    <button class="suggestion-card"
+                            data-prompt="Explain something to me in a simple way.">
+                        <span>💡</span>
+                        <strong>Explain</strong>
+                        <small>Explain something simply</small>
+                    </button>
+
+                    <button class="suggestion-card"
+                            data-prompt="Help me write something.">
+                        <span>✍️</span>
+                        <strong>Write</strong>
+                        <small>Help me write</small>
+                    </button>
+
+                    <button class="suggestion-card"
+                            data-prompt="Help me solve a problem.">
+                        <span>🧠</span>
+                        <strong>Solve</strong>
+                        <small>Work through a problem</small>
+                    </button>
+
+                    <button class="suggestion-card"
+                            data-prompt="Give me some creative ideas.">
+                        <span>✨</span>
+                        <strong>Ideas</strong>
+                        <small>Generate creative ideas</small>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- MESSAGES -->
+            <section id="messages" class="messages"></section>
+
+        </main>
+
+
+        <!-- INPUT AREA -->
+        <footer class="input-area">
+
+            <div class="input-wrapper">
+
+                <textarea
+                    id="messageInput"
+                    rows="1"
+                    placeholder="Ask F-Intelligence anything..."
+                    autocomplete="off"
+                ></textarea>
+
+                <button id="sendBtn" class="send-btn" aria-label="Send">
+                    ➤
+                </button>
+
+            </div>
+
+            <div class="input-note">
+                F-Intelligence can make mistakes. Check important information.
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- Supabase -->
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    const SUPABASE_URL =
+        "https://mkkgnkvbumskwnnrlxeh.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_secret_nBL-l7_CvPqmoUm3ELe_PQ_I-RzYIvJ";
+
+    window.supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+  window.F_INTELLIGENCE_SUPABASE_KEY =
+    SUPABASE_PUBLISHABLE_KEY;
+
+    console.log(
+        "Supabase client:",
+        window.supabaseClient
+    );
+
+    console.log(
+        "Supabase Functions:",
+        window.supabaseClient.functions
+    );
+</script>
+
+<!-- F-Intelligence App -->
+<script src="app.js"></script>
+
+<!-- F-Intelligence App -->
+<script src="app.js"></script>
+
+</body>
+</html>
